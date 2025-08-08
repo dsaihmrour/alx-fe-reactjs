@@ -3,11 +3,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+// ✅ Import your UserProfile component
+import UserProfile from './components/UserProfile'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      {/* ✅ Render your UserProfile component */}
+      <UserProfile />
+
+      {/* You can remove the default Vite content later if you want */}
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
