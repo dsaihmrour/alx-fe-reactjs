@@ -8,7 +8,6 @@ const AddRecipeForm = ({ onAddRecipe }) => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  // Validation function
   const validate = () => {
     const newErrors = {};
     if (!title.trim()) newErrors.title = "Title is required";
@@ -39,7 +38,6 @@ const AddRecipeForm = ({ onAddRecipe }) => {
 
     if (onAddRecipe) onAddRecipe(newRecipe);
 
-    // Reset form
     setTitle("");
     setIngredients("");
     setInstructions("");
@@ -50,14 +48,14 @@ const AddRecipeForm = ({ onAddRecipe }) => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-2xl">
+    <div className="container mx-auto px-4 py-8 md:px-6 max-w-2xl">
       <Link to="/" className="text-blue-500 underline mb-4 inline-block">
         &larr; Back to Home
       </Link>
 
-      <h1 className="text-3xl font-bold text-blue-600 mb-6">Add New Recipe</h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-blue-600 mb-6">Add New Recipe</h1>
 
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg">
+      <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-lg shadow-lg">
         {/* Title */}
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2">Recipe Title</label>
