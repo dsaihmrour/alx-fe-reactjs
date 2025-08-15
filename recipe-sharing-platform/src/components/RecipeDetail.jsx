@@ -7,6 +7,7 @@ const RecipeDetail = () => {
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
+    // Find recipe by ID from the URL
     const foundRecipe = recipesData.find((r) => r.id === parseInt(id));
     setRecipe(foundRecipe);
   }, [id]);
@@ -14,24 +15,4 @@ const RecipeDetail = () => {
   if (!recipe) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <p>Recipe not found.</p>
-        <Link to="/" className="text-blue-500 underline">
-          Back to Home
-        </Link>
-      </div>
-    );
-  }
-
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <Link
-        to="/"
-        className="text-blue-500 underline mb-4 inline-block"
-      >
-        &larr; Back to Home
-      </Link>
-
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <h1 className="text-4xl font-bold mb-4">{recipe.title}</h1>
-        <img
-          src={recipe.image}
+        <p>Recipe not found.</
